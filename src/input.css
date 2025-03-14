@@ -1,14 +1,17 @@
 @import "tailwindcss";
 
-
 @theme {
-    --color-light-green: #3a8256;
-    --color-dark-greeen: #223f2e;
-    --color-light-brown: #393332;
-    --color-mid-brown: #2c2726;
-    --color-dark-brown: #292424;
-    --color-darker-brown: #231f1f;
-    --color-orange-primary:#f59c5c;
-    --font-fira:"Fira Sans","sans-serif";
-    --font-outfit:"Outfit","sans-serif";
-  }
+  --color-light-green: #3a8256;
+  --color-dark-greeen: #223f2e;
+  --color-light-brown: #393332;
+  --color-mid-brown: #2c2726;
+  --color-dark-brown: #292424;
+  --color-darker-brown: #231f1f;
+  --color-orange-primary: #f59c5c;
+  --font-fira: "Fira Sans", serif;
+  --font-outfit: "Outfit", serif;
+}
+
+ul li {
+  @apply py-2 text-red-500 font-fira font-semibold;
+}

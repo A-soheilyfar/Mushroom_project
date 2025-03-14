@@ -9,6 +9,8 @@
     --color-red-500: oklch(0.637 0.237 25.331);
     --color-white: #fff;
     --spacing: 0.25rem;
+    --font-weight-normal: 400;
+    --font-weight-semibold: 600;
     --ease-in: cubic-bezier(0.4, 0, 1, 1);
     --ease-out: cubic-bezier(0, 0, 0.2, 1);
     --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
@@ -26,7 +28,8 @@
     --default-mono-font-variation-settings: var(
       --font-mono--font-variation-settings
     );
-    --color-light-green: #3a8256;
+    --color-light-brown: #393332;
+    --font-fira: "Fira Sans", serif;
   }
 }
 @layer base {
@@ -344,6 +347,9 @@
     @media (width >= 96rem) {
       max-width: 96rem !important;
     }
+  }
+  .ml-auto {
+    margin-left: auto;
   }
   .box-border {
     box-sizing: border-box;
@@ -836,6 +842,9 @@
   .justify-items-stretch {
     justify-items: stretch;
   }
+  .gap-4 {
+    gap: calc(var(--spacing) * 4);
+  }
   .space-y-reverse {
     :where(& > :not(:last-child)) {
       --tw-space-y-reverse: 1;
@@ -1053,8 +1062,8 @@
   .bg-\[var\(--my_variable\)\] {
     background-color: var(--my_variable);
   }
-  .bg-light-green {
-    background-color: var(--color-light-green);
+  .bg-light-brown {
+    background-color: var(--color-light-brown);
   }
   .bg-red-500 {
     background-color: var(--color-red-500);
@@ -1231,6 +1240,9 @@
   .object-top {
     object-position: top;
   }
+  .px-3 {
+    padding-inline: calc(var(--spacing) * 3);
+  }
   .text-center {
     text-align: center;
   }
@@ -1273,9 +1285,20 @@
   .align-top {
     vertical-align: top;
   }
+  .font-fira {
+    font-family: var(--font-fira);
+  }
   .leading-none {
     --tw-leading: 1;
     line-height: 1;
+  }
+  .font-normal {
+    --tw-font-weight: var(--font-weight-normal);
+    font-weight: var(--font-weight-normal);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
   }
   .text-balance {
     text-wrap: balance;
@@ -1797,6 +1820,13 @@
     transform-box: view-box;
   }
 }
+ul li {
+  padding-block: calc(var(--spacing) * 2);
+  font-family: var(--font-fira);
+  --tw-font-weight: var(--font-weight-semibold);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-red-500);
+}
 @property --tw-translate-x {
   syntax: "*";
   inherits: false;
@@ -1895,6 +1925,10 @@
   initial-value: 0;
 }
 @property --tw-leading {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-font-weight {
   syntax: "*";
   inherits: false;
 }
